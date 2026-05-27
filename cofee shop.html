@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Patel Coffee House</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#111;
+    color:white;
+}
+
+/* NAVBAR */
+header{
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+    background:rgba(0,0,0,0.7);
+    backdrop-filter:blur(10px);
+}
+
+.logo{
+    font-size:32px;
+    font-weight:700;
+    color:#d4a373;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    margin-left:30px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#d4a373;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),
+    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1600&auto=format&fit=crop') center/cover;
+    display:flex;
+    align-items:center;
+    padding:0 8%;
+}
+
+.hero-content{
+    max-width:650px;
+}
+
+.hero h1{
+    font-size:70px;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:18px;
+    color:#ddd;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 35px;
+    background:#d4a373;
+    color:white;
+    text-decoration:none;
+    border-radius:40px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#b07d4f;
+    transform:translateY(-3px);
+}
+
+/* SECTION */
+section{
+    padding:100px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:42px;
+    color:#d4a373;
+}
+
+.section-title p{
+    color:#bbb;
+}
+
+/* ABOUT */
+.about{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:40px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    border-radius:20px;
+}
+
+.about-text h3{
+    font-size:36px;
+    margin-bottom:20px;
+}
+
+.about-text p{
+    color:#ccc;
+    line-height:1.8;
+}
+
+/* MENU */
+.menu-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.menu-card{
+    background:#1b1b1b;
+    padding:25px;
+    border-radius:20px;
+    transition:0.4s;
+}
+
+.menu-card:hover{
+    transform:translateY(-10px);
+    background:#222;
+}
+
+.menu-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:15px;
+    margin-bottom:20px;
+}
+
+.menu-card h3{
+    margin-bottom:10px;
+}
+
+.menu-card p{
+    color:#bbb;
+    margin-bottom:15px;
+}
+
+.price{
+    color:#d4a373;
+    font-size:22px;
+    font-weight:600;
+}
+
+/* GALLERY */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:0.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* CONTACT */
+.contact{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:40px;
+}
+
+.contact-info h3{
+    margin-bottom:20px;
+    font-size:30px;
+}
+
+.contact-info p{
+    margin-bottom:15px;
+    color:#ccc;
+}
+
+.contact form{
+    display:flex;
+    flex-direction:column;
+}
+
+.contact input,
+.contact textarea{
+    margin-bottom:20px;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#222;
+    color:white;
+}
+
+.contact textarea{
+    resize:none;
+    height:150px;
+}
+
+.contact button{
+    padding:15px;
+    border:none;
+    background:#d4a373;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.contact button:hover{
+    background:#b07d4f;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:30px;
+    background:#0d0d0d;
+    color:#aaa;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:50px;
+    }
+
+    nav{
+        display:none;
+    }
+}
+.circle{
+    border-radius:50%;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">Patel😊Coffee☕House👌</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Fresh Coffee In The Morning</h1>
+        <p>
+            Experience premium handcrafted coffee with a cozy atmosphere,
+            delicious desserts, and relaxing vibes.
+        </p>
+
+        <a href="#menu" class="btn">View Menu</a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+
+    <div class="section-title">
+        <h2>About Us</h2>
+        <p>Passion for coffee & quality</p>
+    </div>
+
+    <div class="about">
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="about-text">
+            <h3>Best Coffee Shop In Patna</h3>
+
+            <p>
+                We serve freshly brewed coffee made from premium beans sourced
+                from around the world. Our café combines modern style with
+                warm comfort to create the perfect coffee experience.
+            </p>
+
+            <br>
+
+            <p>
+                Whether you want a quick espresso, a relaxing cappuccino,
+                or a sweet dessert, PatelCoffeeHouse is your perfect destination.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+
+    <div class="section-title">
+        <h2>Our Menu</h2>
+        <p>Popular coffee & snacks</p>
+    </div>
+
+    <div class="menu-grid">
+
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=1200&auto=format&fit=crop">
+
+            <h3>Cappuccino</h3>
+            <p>Rich espresso blended with creamy milk foam.</p>
+            <div class="price">$6.99</div>
+        </div>
+
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop">
+
+            <h3>Latte Coffee</h3>
+            <p>Smooth milk coffee with premium roasted beans.</p>
+            <div class="price">$5.99</div>
+        </div>
+
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1200&auto=format&fit=crop">
+
+            <h3>Chocolate Cake</h3>
+            <p>Soft and delicious dark chocolate dessert.</p>
+            <div class="price">$8.99</div>
+        </div>
+
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+
+    <div class="section-title">
+        <h2>Gallery</h2>
+        <p>Inside our coffee world</p>
+    </div>
+
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=1200&auto=format&fit=crop">
+
+        <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?q=80&w=1200&auto=format&fit=crop">
+
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop">
+
+        <img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?q=80&w=1200&auto=format&fit=crop">
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+
+    <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>Get in touch with us</p>
+    </div>
+
+    <div class="contact">
+
+        <div class="contact-info">
+            <h3>Visit Our Café</h3>
+            <h4>Owner RAUNAK PATEL</h4> 
+            <img src="c:\Users\rauna\Downloads\raunakpic.jpg" style="height: 150px; width: 170px;" class="circle">
+        
+         
+            <p>📍 Sipara Patna(BIHAR)</p>
+            <p>📞 6299816425</p>
+            <p>✉️ raunak990patel@gmail.com</p>
+            <p>⏰ Open Daily: 8AM - 10PM</p>
+        </div>
+
+        <form>
+            <input type="text" placeholder="Your Name" required>
+
+            <input type="email" placeholder="Your Email" required>
+
+            <textarea placeholder="Your Message"></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 PatelCoffeeHouse | Designed With raunak❤️
+</footer>
+
+<script>
+const form = document.querySelector("form");
+
+form.addEventListener("submit", function(e){
+    e.preventDefault();
+    alert("Thank you! Your message has been sent.");
+});
+</script>
+
+</body>
+</html>
